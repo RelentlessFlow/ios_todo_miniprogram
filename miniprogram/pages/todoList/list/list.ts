@@ -18,23 +18,24 @@ Component({
     showAddInput: false,  // 显示添加TODO表单
     nameInput: "",  // 名称表单
     remarkInput: "",  // 备注表单
+    swiperIndex: 1, // 滑动列表
   },
 
   lifetimes: {
     attached: function () {
       const list = [
-        { id: '1', name: 'kkk1', listName: '提醒', date: '昨天', flag: true, complete: false },
-        { id: '2', name: 'kkk2', listName: '提醒', date: '今天', flag: false, complete: false },
-        { id: '3', name: 'kkk3', listName: '提醒', date: '前天', flag: true, complete: false },
-        { id: '4', name: 'kkk4', listName: '提醒', date: '昨天', flag: true, complete: true },
-        { id: '5', name: 'kkk5', listName: '提醒', date: '今天', flag: false, complete: true },
-        { id: '6', name: 'kkk6', listName: '提醒', date: '前天', flag: true, complete: true },
-        { id: '7', name: 'kkk4', listName: '提醒', date: '昨天', flag: true, complete: true },
-        { id: '8', name: 'kkk5', listName: '提醒', date: '今天', flag: false, complete: true },
-        { id: '9', name: 'kkk6', listName: '提醒', date: '前天', flag: true, complete: true },
-        { id: '10', name: 'kkk4', listName: '提醒', date: '昨天', flag: true, complete: true },
-        { id: '11', name: 'kkk5', listName: '提醒', date: '今天', flag: false, complete: true },
-        { id: '12', name: 'kkk6', listName: '提醒', date: '前天', flag: true, complete: true }
+        { id: '1', name: 'kkk1', listName: '提醒', date: '昨天', flag: true, complete: false, swiperIndex:1 },
+        { id: '2', name: 'kkk2', listName: '提醒', date: '今天', flag: false, complete: false, swiperIndex:1 },
+        { id: '3', name: 'kkk3', listName: '提醒', date: '前天', flag: true, complete: false, swiperIndex:1 },
+        { id: '4', name: 'kkk4', listName: '提醒', date: '昨天', flag: true, complete: true, swiperIndex:1 },
+        { id: '5', name: 'kkk5', listName: '提醒', date: '今天', flag: false, complete: true, swiperIndex:1 },
+        { id: '6', name: 'kkk6', listName: '提醒', date: '前天', flag: true, complete: true, swiperIndex:1 },
+        { id: '7', name: 'kkk4', listName: '提醒', date: '昨天', flag: true, complete: true, swiperIndex:1 },
+        { id: '8', name: 'kkk5', listName: '提醒', date: '今天', flag: false, complete: true, swiperIndex:1 },
+        { id: '9', name: 'kkk6', listName: '提醒', date: '前天', flag: true, complete: true, swiperIndex:1 },
+        { id: '10', name: 'kkk4', listName: '提醒', date: '昨天', flag: true, complete: true, swiperIndex:1 },
+        { id: '11', name: 'kkk5', listName: '提醒', date: '今天', flag: false, complete: true, swiperIndex:1 },
+        { id: '12', name: 'kkk6', listName: '提醒', date: '前天', flag: true, complete: true, swiperIndex:1 }
       ];
       this.setData({
         "list": list
@@ -47,8 +48,8 @@ Component({
    */
   methods: {
     handleTapCompleteButton(e: any) {
-      const { id } = e.currentTarget.dataset;
-      let { list } = this.data;
+      const { id } = e.currentTarget.dataset
+      let { list } = this.data
       const newList = list.map((item) => {
         if (item.id === id) { let comp = item.complete; item.complete = !comp; }
         return item;
@@ -65,19 +66,22 @@ Component({
     handleTapAddTodoDoneButton() {
       console.log('handleTapAddTodoDoneButton');
     },
-    handleSwiperDelete(e: any) {
-      if (e.detail.current === 1) {
+    handleSwiperItem(e: any) {
+      if (e.detail.current === 2) { // 删除逻辑
         const { id } = e.target.dataset;
         let { list } = this.data;
         const newList = list.filter(item => { return item.id != id })
-        setTimeout(() => { this.setData({ list: newList }) }, 500);
+        setTimeout(() => { this.setData({ list: newList }) }, 500)
       }
-    },
-    getUnfinishedList() {
-      return this.data.list.filter(item => { return !item.complete })
-    },
-    getFinishedList() {
-      return this.data.list.filter(item => { return item.complete })
+      if (e.detail.current === 0) { // 旗帜逻辑
+        const { id } = e.target.dataset;
+        let { list } = this.data;
+        const newList = list.map((item) => {
+          if (item.id === id) { let flag = item.flag; item.flag = !flag; }
+          return item;
+        })
+        setTimeout(() => { this.setData({ list: newList }) }, 500)
+      }
     },
   },
 

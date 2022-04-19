@@ -1,0 +1,15 @@
+<swiper class="swiper" indicator-dots="{{false}}" autoplay="{{false}}" current="{{currentIndex}}" easing-function="default" bindchange="handleSwiperItem" data-id="{{id}}">
+  <swiper-item>
+    <!-- 旗帜滑块 -->
+    <view class="swiper-item-content swiper-item-flag">
+      {{item.flag ? '取消旗帜' : '旗帜'}}
+    </view>
+  </swiper-item>
+  <swiper-item class="swiper-item">
+      <slot />
+  </swiper-item>
+  <!-- 删除滑块 -->
+  <swiper-item>
+    <view class="swiper-item-content swiper-item-delete">删除</view>
+  </swiper-item>
+</swiper>

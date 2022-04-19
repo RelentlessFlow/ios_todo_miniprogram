@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "list": "/pages/todoList/list/list"
+    "list": "/pages/todoList/list/list",
+    "swiper-item": "/pages/todoList/swperItem/swperItem"
   },
   "navigationBarBackgroundColor": "#feffff",
   "backgroundColor": "#feffff"

@@ -5,7 +5,7 @@
   },
   "miniprogramRoot": "miniprogram/",
   "compileType": "miniprogram",
-  "projectname": "todolist",
+  "projectname": "ios_todo_miniprogram",
   "setting": {
     "urlCheck": true,
     "es6": true,
@@ -50,5 +50,6 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "appid": "wx0af6bc284a87d144",
+  "libVersion": "2.23.4",
   "condition": {}
 }

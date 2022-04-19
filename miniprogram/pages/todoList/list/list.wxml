@@ -35,8 +35,16 @@
   <!-- 待完成项目组 -->
   <view class="small-title">待完成</view>
   <block wx:for="{{unfinished_list}}" wx:key="id">
-    <swiper class="swiper" indicator-dots="{{false}}" autoplay="{{false}}" interval="{{2000}}" duration="{{300}}" current="0" easing-function="default" 
-      bindchange="handleSwiperDelete" data-id="{{item.id}}">
+    <swiper 
+      class="swiper" 
+      indicator-dots="{{false}}" autoplay="{{false}}" 
+      current="{{item.swiperIndex}}" easing-function="default" bindchange="handleSwiperItem" data-id="{{item.id}}">
+      <swiper-item>
+        <!-- 旗帜滑块 -->
+        <view class="swiper-item-content swiper-item-flag">
+          {{item.flag ? '取消旗帜' : '旗帜'}}
+        </view>
+      </swiper-item>
       <swiper-item class="swiper-item">
         <custom-item brb="{{false}}" brt="{{true}}" border="{{true}}" borderWidth="{{91}}" showArrow="{{false}}" bgColor="{{'none'}}" padding="20rpx 30rpx 20rpx 0">
           <view class="todo">
@@ -57,14 +65,13 @@
             <block wx:if="{{item.flag}}">
               <image class="todo-flag" src="/images/flag_active.png" />
             </block>
-            <block wx:else>
-              <image class="todo-flag todo-flag-border" src="/images/flag_border.png" />
-            </block>
           </view>
         </custom-item>
       </swiper-item>
       <!-- 删除滑块 -->
-      <swiper-item><view class="swiper-item-delete">删除</view></swiper-item>
+      <swiper-item>
+        <view class="swiper-item-content swiper-item-delete">删除</view>
+      </swiper-item>
     </swiper>
 
   </block>
@@ -74,8 +81,13 @@
     <view class="small-title">已完成</view>
     <block wx:for="{{finished_list}}" wx:key="id">
       <!-- 滑块 -->
-      <swiper class="swiper" indicator-dots="{{false}}" autoplay="{{false}}" interval="{{2000}}" duration="{{300}}" current="0" easing-function="default" 
-      bindchange="handleSwiperDelete" data-id="{{item.id}}">
+      <swiper class="swiper" indicator-dots="{{false}}" autoplay="{{false}}" interval="{{2000}}" duration="{{300}}" current="{{item.swiperIndex}}" easing-function="default" bindchange="handleSwiperItem" data-id="{{item.id}}">
+        <swiper-item>
+          <!-- 旗帜滑块 -->
+          <view class="swiper-item-content swiper-item-flag">
+            {{item.flag ? '取消旗帜' : '旗帜'}}
+          </view>
+        </swiper-item>
         <swiper-item class="swiper-item">
           <custom-item brb="{{false}}" brt="{{true}}" border="{{true}}" borderWidth="{{91}}" showArrow="{{false}}" bgColor="{{'none'}}" padding="20rpx 30rpx 20rpx 0">
             <view class="todo">
@@ -96,14 +108,13 @@
               <block wx:if="{{item.flag}}">
                 <image class="todo-flag" src="/images/flag_active.png" />
               </block>
-              <block wx:else>
-                <image class="todo-flag todo-flag-border" src="/images/flag_border.png" />
-              </block>
             </view>
           </custom-item>
         </swiper-item>
         <!-- 删除滑块 -->
-        <swiper-item><view class="swiper-item-delete">删除</view></swiper-item>
+        <swiper-item>
+          <view class="swiper-item-content swiper-item-delete">删除</view>
+        </swiper-item>
       </swiper>
     </block>
   </block>

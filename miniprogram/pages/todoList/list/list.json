@@ -2,5 +2,7 @@
   "component": true,
   "navigationBarBackgroundColor": "#feffff",
   "backgroundColor": "#feffff",
-  "usingComponents": {}
+  "usingComponents": {
+    "swiper-item": "/pages/todoList/swperItem/swperItem"
+  }
 }

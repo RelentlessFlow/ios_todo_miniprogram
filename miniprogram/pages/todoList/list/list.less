@@ -2,9 +2,11 @@
 
 .container {
   position: relative;
+
   .top {
     display: flex;
     align-items: center;
+
     .top-title {
       font-size: 70rpx;
       font-weight: 600;
@@ -14,7 +16,7 @@
       flex-grow: 1;
     }
   }
-  
+
   .small-title {
     font-size: 42rpx;
     padding-top: 20rpx;
@@ -36,16 +38,7 @@
     }
   }
 
-  // 滑块
-  .swiper {
-    height: 130rpx;
-    .swiper-item-delete {
-      height: 100%; display: flex; align-items: center; padding-left: 50rpx;
-      background: linear-gradient(to right, @custom_danger, red); 
-      color: @custom_white;
-      font-size: 35rpx;
-    }
-  }
+
   // 任务项目
   .todo {
     width: 100%;
@@ -136,6 +129,7 @@
       }
     }
   }
+
   .add {
     position: fixed;
     left: 80vw;
