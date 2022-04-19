@@ -1,0 +1,16 @@
+<block wx:if="{{isDelete}}">
+  <swiper 
+    indicator-dots="{{false}}" autoplay="{{false}}" interval="{{2000}}" duration="{{300}}" 
+    current="1" easing-function="default" bindchange="handleSwiperDelete">
+    <swiper-item>
+      <view class="swiper-one">
+        任意内容
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-two">
+        <view class="delete">删除</view>
+      </view>
+    </swiper-item>
+  </swiper>
+</block>

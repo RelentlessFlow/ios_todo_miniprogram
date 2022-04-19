@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/todoList/todoList",
+    "pages/index/index",
+    "pages/addTodo/addTodo",
+    "pages/selectList/selectList",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f1f2f6",
+    "backgroundColor": "#f1f2f6",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "custom-icon": "/components/custom/customIcon/customIcon",
+    "custom-press": "/components/custom/customPress/customPress",
+    "custom-button": "/components/custom/customButton/customButton",
+    "custom-blue-button": "/components/custom/customBlueButton/customBlueButton",
+    "custom-container": "/components/custom/customContainer/customContainer",
+    "custom-card": "/components/custom/customCard/customCard",
+    "custom-item": "/components/custom/customItem/customItem"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

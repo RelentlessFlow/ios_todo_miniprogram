@@ -1,0 +1,14 @@
+<view class="item {{brt && 'brt'}} {{brb && 'brb'}}"
+  style="background: {{bgColor}}; padding: {{padding}};"
+>
+  <view class="content">
+    <view class="slot"><slot/></view>
+    <block wx:if="{{showArrow}}">
+      <view class="sign">></view>
+    </block>
+    <view 
+      class="border {{border && 'border-active'}}" 
+      style="width: {{borderWidth + '%'}}"
+    />
+  </view>
+</view>

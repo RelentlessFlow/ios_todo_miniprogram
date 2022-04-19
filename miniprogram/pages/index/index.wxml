@@ -1,0 +1,15 @@
+<custom-container>
+  <seach></seach>
+  <todos></todos>
+  <view class="list-title">我的列表</view>
+  <mytodos list="{{mylist}}" class="list-content" />
+  <view class="bottom-button-list">
+    <custom-button class="bottom-button-item" bindtap="handleAddTodolist">
+      <image class="bottom-button-item-icon" src="/images/add.png" />
+      <view class="bottom-button-item-title">新提醒事项</view>
+    </custom-button>
+    <custom-button class="bottom-button-item" bindtap="handleAddTodolist">
+      <view class="bottom-button-item-title">添加列表</view>
+    </custom-button>
+  </view>
+</custom-container>

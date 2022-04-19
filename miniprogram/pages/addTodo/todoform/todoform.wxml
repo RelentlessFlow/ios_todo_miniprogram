@@ -1,0 +1,6 @@
+<custom-item brt="{{true}}" border="{{true}}" borderWidth="{{95}}" showArrow="{{false}}">
+  <input class="input-title" type="text" placeholder="标题"/>
+</custom-item>
+<custom-item brb="{{true}}" border="{{false}}" showArrow="{{false}}">
+  <textarea class="input-remark" type="text" placeholder="备注"/>
+</custom-item>

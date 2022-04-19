@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "list": "/pages/todoList/list/list"
+  },
+  "navigationBarBackgroundColor": "#feffff",
+  "backgroundColor": "#feffff"
+}

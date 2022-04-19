@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "seach": "/pages/index/search/search",
+    "todos": "/pages/index/todos/todos",
+    "mytodos": "/pages/index/mytodos/mytodos"
+  },
+  "navigationBarTitleText": "待办事项"
+}

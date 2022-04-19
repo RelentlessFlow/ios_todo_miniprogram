@@ -1,0 +1,11 @@
+<!--components/search/search.wxml-->
+<view class="container">
+  <label class="seach">
+    <image class="seach-icon" src="/images/search.png" />
+    <input class="seach-input" placeholder="搜索" bindfocus="_displaySearchList" bindblur="_fadeSearchList" />
+    <view wx:if="{{clear_active}}" class="clear-btn">X</view>
+  </label>
+  <button wx:if="{{cancel_active}}" class="right-btn">取消</button>
+  <button wx:if="{{edit_active}}" class="right-btn">编辑</button>
+  <view wx:if="{{search_active}}" class="container_shade" bindtap="_fadeSearchList" />
+</view>

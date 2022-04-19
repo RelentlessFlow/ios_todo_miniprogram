@@ -1,0 +1,11 @@
+<!--components/custom/customPress/customPress.wxml-->
+
+<view 
+  class="press"
+  bindtouchstart="handleTouchStart"
+  bindtouchend="handleTouchEnd"
+>
+  <slot/>
+  <view class="shadow {{isTouched && 'shadow-on'}} {{isTouched || 'shadow-out'}}"/>
+</view>
+

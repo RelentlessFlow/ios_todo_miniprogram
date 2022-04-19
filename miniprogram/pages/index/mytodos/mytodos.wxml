@@ -1,0 +1,12 @@
+<!--components/mytodos/mytodos.wxml-->
+<block wx:for="{{list}}">
+  <view class="item">    
+    <custom-icon class="icon" src="/images/list.png" bgColor="{{item.iconColor}}" scale="0.9" />
+    <view class="content">
+      <view class="title">{{item.title}}</view>
+      <view class="count">{{item.count}}</view>
+      <view class="sign">></view>
+      <view class="border" />
+    </view>
+  </view>
+</block>

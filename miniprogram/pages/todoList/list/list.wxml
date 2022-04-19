@@ -1,0 +1,111 @@
+<custom-container class="container" bgColor="#feffff" padding="0rpx 0rpx 0rpx 30rpx">
+  <!-- 顶部标题、添加按钮 -->
+  <view class="top">
+    <!-- 大标题 -->
+    <view class="top-title" style="color: {{color}};">{{title}}</view>
+  </view>
+  <!-- 已完成项目展示 -->
+  <block wx:if="{{finished_list.length > 0}}">
+    <custom-item class="notice" brb="{{false}}" brt="{{true}}" border="{{true}}" borderWidth="{{96}}" showArrow="{{false}}" bgColor="{{'none'}}">
+      <view class="notice-content">
+        {{finished_list.length}}项已完成，{{unfinished_list.length}}项未完成。
+      </view>
+      <view class="notice-button" bindtap="handleTapShowButton">显示</view>
+    </custom-item>
+  </block>
+
+  <!-- 添加项目组 -->
+  <block wx:if="{{showAddInput}}">
+    <custom-item brb="{{false}}" brt="{{true}}" border="{{true}}" borderWidth="{{91}}" showArrow="{{false}}" bgColor="{{'none'}}" padding="20rpx 30rpx 20rpx 0">
+      <view class="todo">
+        <image class="todo-add" src="/images/add_grey.png" bindtap="handleTapAddTodoDoneButton" />
+        <view class="todo-input-group">
+          <input class="todo-input-group-item" placeholder="名称" value="{{nameInput}}" />
+          <input class="todo-input-group-item" placeholder="备注" value="{{remarkInput}}" />
+        </view>
+        <block wx:if="{{false}}">
+          <image class="todo-flag" src="/images/flag_active.png" />
+        </block>
+        <block wx:else>
+          <image class="todo-flag todo-flag-border" src="/images/flag_border.png" />
+        </block>
+      </view>
+    </custom-item>
+  </block>
+  <!-- 待完成项目组 -->
+  <view class="small-title">待完成</view>
+  <block wx:for="{{unfinished_list}}" wx:key="id">
+    <swiper class="swiper" indicator-dots="{{false}}" autoplay="{{false}}" interval="{{2000}}" duration="{{300}}" current="0" easing-function="default" 
+      bindchange="handleSwiperDelete" data-id="{{item.id}}">
+      <swiper-item class="swiper-item">
+        <custom-item brb="{{false}}" brt="{{true}}" border="{{true}}" borderWidth="{{91}}" showArrow="{{false}}" bgColor="{{'none'}}" padding="20rpx 30rpx 20rpx 0">
+          <view class="todo">
+            <view class="todo-complete" bindtap="handleTapCompleteButton" data-id="{{item.id}}">
+              <view class="todo-complete-circle">
+                <block wx:if="{{item.complete}}">
+                  <view class="todo-complete-circle-small" />
+                </block>
+              </view>
+            </view>
+            <view class="todo-content">
+              <view class="todo-content-title">{{item.name}}</view>
+              <view class="todo-content-desc">
+                <view class="todo-content-desc-title">{{item.listName}}</view> -
+                <view class="todo-content-desc-date">{{item.date}}</view>
+              </view>
+            </view>
+            <block wx:if="{{item.flag}}">
+              <image class="todo-flag" src="/images/flag_active.png" />
+            </block>
+            <block wx:else>
+              <image class="todo-flag todo-flag-border" src="/images/flag_border.png" />
+            </block>
+          </view>
+        </custom-item>
+      </swiper-item>
+      <!-- 删除滑块 -->
+      <swiper-item><view class="swiper-item-delete">删除</view></swiper-item>
+    </swiper>
+
+  </block>
+
+  <!-- 已完成项目组 -->
+  <block wx:if="{{showFinished}}">
+    <view class="small-title">已完成</view>
+    <block wx:for="{{finished_list}}" wx:key="id">
+      <!-- 滑块 -->
+      <swiper class="swiper" indicator-dots="{{false}}" autoplay="{{false}}" interval="{{2000}}" duration="{{300}}" current="0" easing-function="default" 
+      bindchange="handleSwiperDelete" data-id="{{item.id}}">
+        <swiper-item class="swiper-item">
+          <custom-item brb="{{false}}" brt="{{true}}" border="{{true}}" borderWidth="{{91}}" showArrow="{{false}}" bgColor="{{'none'}}" padding="20rpx 30rpx 20rpx 0">
+            <view class="todo">
+              <view class="todo-complete" bindtap="handleTapCompleteButton" data-id="{{item.id}}">
+                <view class="todo-complete-circle">
+                  <block wx:if="{{item.complete}}">
+                    <view class="todo-complete-circle-small" />
+                  </block>
+                </view>
+              </view>
+              <view class="todo-content">
+                <view class="todo-content-title">{{item.name}}</view>
+                <view class="todo-content-desc">
+                  <view class="todo-content-desc-title">{{item.listName}}</view> -
+                  <view class="todo-content-desc-date">{{item.date}}</view>
+                </view>
+              </view>
+              <block wx:if="{{item.flag}}">
+                <image class="todo-flag" src="/images/flag_active.png" />
+              </block>
+              <block wx:else>
+                <image class="todo-flag todo-flag-border" src="/images/flag_border.png" />
+              </block>
+            </view>
+          </custom-item>
+        </swiper-item>
+        <!-- 删除滑块 -->
+        <swiper-item><view class="swiper-item-delete">删除</view></swiper-item>
+      </swiper>
+    </block>
+  </block>
+  <view class="add" bindtap="handleTapAddButton">{{showAddInput ? '-' : '+'}}</view>
+</custom-container>

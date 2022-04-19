@@ -1,0 +1,5 @@
+<custom-press>
+<view class="button">
+  <slot/>
+</view>
+</custom-press>

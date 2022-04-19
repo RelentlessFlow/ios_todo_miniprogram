@@ -1,0 +1,48 @@
+/* components/todos/todos.wxss */
+@import '/less_global/variable.less';
+.todos-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  flex-direction: row;
+  .todos-item {
+    width: 330rpx;
+    height: 150rpx;
+    margin-top: 20rpx;
+    box-sizing: border-box;
+    padding: 20rpx 25rpx;
+    border-radius: 30rpx;
+    display: flex;
+    background-color: @custom_white;
+    .todos-desc {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+      font-weight: 600;
+      color: @custom_font_black;
+      .todos-desc-icon {
+        position: relative;
+        .icon-data {
+          width: 17rpx; height: 15rpx;
+          background-color: #317bf6;
+          // background-color: red;    
+          position: absolute;
+          top: 19rpx;
+          left: 18rpx;
+          font-weight: 400;
+          font-size: 16rpx;
+          line-height: 17rpx;
+          color: #feffff;
+          text-align: center;
+        }
+      }
+     
+    }
+    .todos-count {
+      font-size: 50rpx;
+      font-weight: 800;
+    }
+  }
+}

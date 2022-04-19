@@ -1,0 +1,6 @@
+<view 
+  class="container"
+  style="background: {{bgColor}}; padding: {{padding}};"
+>
+  <slot/>
+</view>

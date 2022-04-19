@@ -1,0 +1,24 @@
+@import "/less_global/variable.less";
+.item {
+  display: flex;
+  padding: 20rpx 25rpx;
+  background-color: @custom_white;
+  align-items: center;
+  position: relative;
+  &:first-child {
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+  }
+  &:last-child {
+    border-bottom-left-radius: 30rpx;
+    border-bottom-right-radius: 30rpx;
+  }
+  &:not(:last-child) .border {
+    position: absolute;
+    top: 0; right: 0; width: 87%; height: 100%;
+    border-bottom: 1rpx solid #cccccc;
+  }
+  .content {
+    flex: 1;
+  }
+}
