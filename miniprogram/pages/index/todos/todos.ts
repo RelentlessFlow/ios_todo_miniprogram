@@ -23,6 +23,12 @@ Component({
   methods: {
     _getDay() {
       return new Date().getDate()
+    },
+    navigateToTodos(e:any) {
+      const {id} = e.currentTarget.dataset
+      wx.navigateTo({
+        url: `/pages/todoList/todoList?id=${id}`
+      })
     }
   },
 

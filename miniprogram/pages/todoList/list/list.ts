@@ -36,9 +36,7 @@ Component({
         { id: '11', name: 'kkk5', listName: '提醒', date: '今天', flag: false, complete: true },
         { id: '12', name: 'kkk6', listName: '提醒', date: '前天', flag: true, complete: true }
       ];
-      this.setData({
-        "list": list
-      })
+      this.setData({ "list": list })
     }
   },
 
@@ -65,19 +63,21 @@ Component({
     handleTapAddTodoDoneButton() {
       console.log('handleTapAddTodoDoneButton');
     },
-    handleSwiperDelete(e: any) {
-      if (e.detail.current === 1) {
-        const { id } = e.target.dataset;
-        let { list } = this.data;
-        const newList = list.filter(item => { return item.id != id })
-        setTimeout(() => { this.setData({ list: newList }) }, 500);
+    handleSwiper(e: any) {
+      const { direction } = e.detail; // 获取Todo ID
+      const { id } = e.currentTarget;
+      const { list } = this.data;
+      if (direction === 'left') { // 左滑逻辑
+        const newList = list.map((item) => {
+          if (item.id === id) { let flag = item.flag; item.flag = !flag; }
+          return item;
+        })
+        this.setData({ list: newList })
       }
-    },
-    getUnfinishedList() {
-      return this.data.list.filter(item => { return !item.complete })
-    },
-    getFinishedList() {
-      return this.data.list.filter(item => { return item.complete })
+      if (direction === 'right') { // 右滑逻辑
+        const newList = list.filter(item => { return item.id != id })
+        this.setData({ list: newList })
+      }
     },
   },
 

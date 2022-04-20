@@ -1,0 +1,62 @@
+@import "/less_global/variable.less";
+
+.item-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top {
+  .top-content {
+    flex-direction: column;
+
+    .top-icon {
+      width: 190rpx;
+      height: 190rpx;
+      // background-color: #4899f7;
+      box-shadow: 10rpx 10rpx 10rpx #cccccc;
+      border-radius: 50%;
+      margin: 40rpx 0;
+
+      .top-icon-img {
+        width: inherit;
+        height: inherit;
+        transform: scale(0.6);
+      }
+    }
+
+    .top-input {
+      text-align: center;
+      background-color: #f4f4f4;
+      width: 100%;
+      height: 110rpx;
+      border-radius: 25rpx;
+      font-size: 40rpx;
+      font-weight: 500;
+      color: @custom_font_black;
+    }
+  }
+
+}
+
+.middle {
+  @color-margin: calc(160rpx / 7);
+  margin: @card_margin 0;
+  .middle-content {
+    flex-wrap: wrap;
+    margin-bottom: @color-margin;
+    .middle-color {
+      width: 90rpx;
+      height: 90rpx;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 2rpx 2rpx 2rpx #cccccc;
+      margin-left: @color-margin;
+      margin-top: @color-margin;
+      &:nth-child(6n +6) {
+        margin-right: @color-margin;
+      }
+    }
+  }
+}

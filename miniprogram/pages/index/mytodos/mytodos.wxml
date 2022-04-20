@@ -1,5 +1,5 @@
 <!--components/mytodos/mytodos.wxml-->
-<block wx:for="{{list}}">
+<block wx:for="{{list}}" wx:key="id">
   <view class="item">    
     <custom-icon class="icon" src="/images/list.png" bgColor="{{item.iconColor}}" scale="0.9" />
     <view class="content">

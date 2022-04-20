@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "todo-form" : "/pages/addTodo/todoform/todoform"
+    "todo-form" : "/pages/addTodo/todoform/todoform",
+    "button-form": "/pages/addTodo/buttonform/buttonform"
   },
   "navigationBarTitleText": "新提醒事项"
 }

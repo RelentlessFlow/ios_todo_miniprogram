@@ -1,5 +1,5 @@
 <view class="item {{brt && 'brt'}} {{brb && 'brb'}}"
-  style="background: {{bgColor}}; padding: {{padding}};"
+  style="background: {{bgColor}}; padding: {{padding}}; height: {{height}};"
 >
   <view class="content">
     <view class="slot"><slot/></view>

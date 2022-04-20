@@ -5,12 +5,15 @@ const app = getApp<IAppOption>()
 Page({
   data: {
     mylist: [
-      {iconColor: '#97989b', title: "提醒", count: 0},
-      {iconColor: '#97989b', title: "列表1", count: 20},
-      {iconColor: '#97989b', title: "列表2", count: 12}
+      {id: 1, iconColor: '#97989b', title: "提醒", count: 0},
+      {id: 2, iconColor: '#97989b', title: "列表1", count: 20},
+      {id: 3, iconColor: '#97989b', title: "列表2", count: 12}
     ]
   },
-  handleAddTodolist: function() {
-    console.log('CCC');
+  handleTapAddTodo: function() {
+    wx.navigateTo({url: "/pages/addTodo/addTodo"})
+  },
+  handleTapAddList: function() {
+    wx.navigateTo({url: "/pages/addList/addList"})
   }
 })

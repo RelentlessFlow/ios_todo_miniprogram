@@ -1,7 +1,10 @@
 <custom-container>
-  <todo-form></todo-form>
-  <custom-item class="item" brb="{{true}}" brt="{{true}}" border="{{false}}" showArrow="{{true}}" >
-    <view>详细信息</view>
+  <todo-form bindinput="handleInput" value1="{{name}}" value2="{{remark}}"/>
+  <custom-item class="item" brb="{{true}}" brt="{{true}}" border="{{false}}" showArrow="{{false}}">
+    <view>旗帜</view>
+    <view class="switch-view">
+      <switch class="switch-view-content" checked="{{flag}}" bindtap="handleFlagSwitch" />
+    </view>
   </custom-item>
   <custom-item class="item" brb="{{true}}" brt="{{true}}" border="{{false}}" showArrow="{{true}}" >
     <view class="item-list">
@@ -11,8 +14,11 @@
       </view>
     </view>
   </custom-item>
-  <view class="button-list">
-    <button class="button-list-item">添加</button>
-    <button class="button-list-item">取消</button>
-  </view>
+
+  <button-form class="footer"
+    bindlefttap="handleButtonTap" 
+    bindrighttap="handleButtonTap" 
+  />
 </custom-container>
+
+

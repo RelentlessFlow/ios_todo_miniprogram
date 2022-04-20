@@ -10,7 +10,8 @@ Component({
     showArrow: {type: Boolean, value: true}, // 展示右侧的箭头
     borderWidth: {type: Number, value: 100}, // 底部边框宽度
     bgColor: {type: String, value: ''}, // 项目背景颜色,
-    padding: {type: String, value: ''} // 内变局
+    height: {type:String, value: ''}, // 父容器传值设置高度
+    padding: {type: String, value: ''} // 内变局,
   },
 
   /**

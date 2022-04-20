@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "button-form": "/pages/addTodo/buttonform/buttonform"
+  },
+  "navigationBarTitleText": "新建列表"
+}

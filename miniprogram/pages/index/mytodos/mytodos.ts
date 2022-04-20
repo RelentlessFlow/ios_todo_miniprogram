@@ -7,9 +7,9 @@ Component({
     list: {
       type: Object,
       value: [
-        {iconColor: '#eb8835', title: "列表2", count: 0},
-        {iconColor: '#eb8835', title: "列表1", count: 20},
-        {iconColor: '#eb8835', title: "列表2", count: 12}
+        { id: 1, iconColor: '#eb8835', title: "列表2", count: 0 },
+        { id: 2, iconColor: '#eb8835', title: "列表1", count: 20 },
+        { id: 3, iconColor: '#eb8835', title: "列表2", count: 12 }
       ]
     }
   },

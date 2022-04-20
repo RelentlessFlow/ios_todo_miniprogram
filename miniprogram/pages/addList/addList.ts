@@ -1,33 +1,34 @@
-// pages/addTodo/addTodo.ts
+// pages/addList.ts
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    flag : false, name: '', remark: ''
+    colors: [
+      "#ea4d3d", "#f19937", "#f6cd45", "#5dc366",
+      "#67a9ec", "#327cf6", "#575ace", "#d8506c",
+      "#b57dd5", "#9a8566", "#5d666f", "#d1a8a0"
+    ],
+    current: "#ea4d3d",
+    icon: {id: 1, path: "/images/icons/list.png"}
   },
-  handleButtonTap(e:any) {
-    if(e.type === 'lefttap') { // 左点击
-      console.log('handleButtonTap Left');
+  handleButtonTap: function(e:any) {
+    if(e.type === 'leftTap') {
+      console.log('leftTap')
     }
-    if(e.type === 'righttap') { // 左点击
-      console.log('handleButtonTap Right');
+    if(e.type === 'rightTap') {
+      console.log('rightTap')
     }
   },
-  handleFlagSwitch() {
-    this.setData({"flag": !this.data.flag})
-  },
-  handleInput(e:any) {
-    const {data, type} = e.detail;
-    if(type === 'input1') { this.setData({'name': data.value}) }
-    if(type === 'input2') { this.setData({'remark': data.value}) }
+  handleColorSelect: function(e:any) {
+    this.setData({"current": e.target.dataset.id}) 
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    
+
   },
 
   /**

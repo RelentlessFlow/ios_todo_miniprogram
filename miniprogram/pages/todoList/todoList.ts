@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: "全部", color: "#5c6269",
+    id: '1', title: "全部", color: "#5c6269",
     todos: {
       list: [
         {id: '1', name: 'kkk1', listName: '提醒', date: '昨天', flag: true, complete: false },
@@ -59,8 +59,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-
+  onLoad(options) {
+    this.setData({"id": options.id})
   },
 
   /**

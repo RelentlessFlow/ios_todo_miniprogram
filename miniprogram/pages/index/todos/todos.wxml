@@ -1,6 +1,6 @@
 <!--components/todos/todos.wxml-->
 <view class="todos-list">
-  <view class="todos-item" style="order: {{todos_sort.today}};">
+  <view class="todos-item" style="order: {{todos_sort.today}};" bindtap="navigateToTodos" data-id="-1">
     <view class="todos-desc">
       <custom-icon class="todos-desc-icon" src="/images/calendar.png" bgColor="#317bf6;">
         <viw class="icon-data">{{day}}</viw>
@@ -9,21 +9,21 @@
     </view>
     <view class="todos-count">0</view>
   </view>
-  <view class="todos-item" style="order: {{todos_sort.plan}};">
+  <view class="todos-item" style="order: {{todos_sort.plan}};" bindtap="navigateToTodos" data-id="-2">
     <view class="todos-desc">
       <custom-icon src="/images/calendar.png" bgColor="#e84e3d;" />
       <view class="todos-desc-name">计划</view>
     </view>
     <view class="todos-count">0</view>
   </view>
-  <view class="todos-item" style="order: {{todos_sort.all}};">
+  <view class="todos-item" style="order: {{todos_sort.all}};" bindtap="navigateToTodos" data-id="-3">
     <view class="todos-desc">
       <custom-icon src="/images/box.png" bgColor="#5a636a;" scale="0.8" />
       <view class="todos-desc-name">全部</view>
     </view>
     <view class="todos-count">1</view>
   </view>
-  <view class="todos-item" style="order: {{todos_sort.flag}};">
+  <view class="todos-item" style="order: {{todos_sort.flag}};" bindtap="navigateToTodos" data-id="-4">
     <view class="todos-desc">
       <custom-icon src="/images/flag.png" bgColor="#ee9937;" />
       <view class="todos-desc-name">旗标</view>

@@ -1,0 +1,11 @@
+<view class="button-list">
+  <button
+   class="button-list-item"
+   bindtap="handleLeftButtonTap"
+  >
+  添加</button>
+  <button 
+    class="button-list-item"
+    bindtap="handleRightButtonTap"
+  >取消</button>
+</view>

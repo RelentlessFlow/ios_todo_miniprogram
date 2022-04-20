@@ -15,23 +15,16 @@
       }
     }
   }
+  .switch-view {
+    flex-grow: 1;
+    justify-content: flex-end;
+    display: flex;
+    .switch-view-content {
+      z-index: 100;
+    }
+  }
 }
 
-.button-list {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 50rpx;
-  margin-right: 50rpx;
-  .button-list-item {
-    margin: 0 40rpx;
-    border-radius: 20rpx;
-  }
-  .button-list-item:nth-child(1) {
-    background-color: @custom_pramary;
-    color: white;
-  }
-  .button-list-item:nth-child(2) {
-    background-color: @custom_danger;
-    color: #ffffff;
-  }
+.footer {
+  margin-top: @card_distance;
 }

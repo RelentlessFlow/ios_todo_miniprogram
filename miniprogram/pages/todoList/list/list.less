@@ -2,9 +2,11 @@
 
 .container {
   position: relative;
+
   .top {
     display: flex;
     align-items: center;
+
     .top-title {
       font-size: 70rpx;
       font-weight: 600;
@@ -14,7 +16,7 @@
       flex-grow: 1;
     }
   }
-  
+
   .small-title {
     font-size: 42rpx;
     padding-top: 20rpx;
@@ -36,106 +38,99 @@
     }
   }
 
-  // 滑块
   .swiper {
-    height: 130rpx;
-    .swiper-item-delete {
-      height: 100%; display: flex; align-items: center; padding-left: 50rpx;
-      background: linear-gradient(to right, @custom_danger, red); 
-      color: @custom_white;
-      font-size: 35rpx;
-    }
-  }
-  // 任务项目
-  .todo {
-    width: 100%;
-    display: flex;
-
-    .todo-complete {
-      margin-right: 30rpx;
+    height: 135rpx;
+    // 任务项目
+    .todo {
+      width: 100%;
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-
-      .todo-complete-circle {
-        border: 1rpx solid #cccccc;
-        width: 42rpx;
-        height: 42rpx;
-        border-radius: 50%;
+      .todo-complete {
+        margin-right: 30rpx;
         display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+        justify-content: flex-start;
+        align-items: flex-start;
 
-      .todo-complete-circle-small {
-        border: 1rpx solid #cccccc;
-        width: 31rpx;
-        height: 31rpx;
-        border-radius: 50%;
-        background: #f19938;
-      }
-    }
-
-    .todo-content {
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-
-      .todo-content-title {
-        font-size: 35rpx;
-        font-weight: 300;
-      }
-
-      .todo-content-desc {
-        display: flex;
-        flex-direction: row;
-        font-weight: 200;
-        letter-spacing: 2rpx;
-
-        .todo-content-desc-title {
-          color: #87888b;
-          margin-right: 5rpx;
+        .todo-complete-circle {
+          border: 1rpx solid #cccccc;
+          width: 42rpx;
+          height: 42rpx;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
-        .todo-content-desc-date {
-          color: #e61800;
-          margin-left: 5rpx;
+        .todo-complete-circle-small {
+          border: 1rpx solid #cccccc;
+          width: 31rpx;
+          height: 31rpx;
+          border-radius: 50%;
+          background: #f19938;
         }
       }
-    }
 
-    // 右侧旗帜
-    .todo-flag {
-      width: 60rpx;
-      height: 60rpx;
-      margin-top: 10rpx;
-    }
+      .todo-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
 
-    .todo-flag-border {
-      transform: scale(0.85);
-    }
+        .todo-content-title {
+          font-size: 35rpx;
+          font-weight: 300;
+        }
 
-    // 添加项目组
-    .todo-add {
-      width: 42rpx;
-      height: 42rpx;
-    }
+        .todo-content-desc {
+          display: flex;
+          flex-direction: row;
+          font-weight: 200;
+          letter-spacing: 2rpx;
 
-    .todo-input-group {
-      flex-grow: 1;
-      margin-left: 30rpx;
+          .todo-content-desc-title {
+            color: #87888b;
+            margin-right: 5rpx;
+          }
 
-      & .todo-input-group-item:nth-of-type(1) {
-        font-size: 30rpx;
+          .todo-content-desc-date {
+            color: #e61800;
+            margin-left: 5rpx;
+          }
+        }
       }
 
-      & .todo-input-group-item:nth-of-type(2) {
-        font-size: 28rpx;
-        font-weight: 300;
+      // 右侧旗帜
+      .todo-flag {
+        width: 60rpx;
+        height: 60rpx;
         margin-top: 10rpx;
       }
+
+      .todo-flag-border {
+        transform: scale(0.85);
+      }
+
+      // 添加项目组
+      .todo-add {
+        width: 42rpx;
+        height: 42rpx;
+      }
+
+      .todo-input-group {
+        flex-grow: 1;
+        margin-left: 30rpx;
+
+        & .todo-input-group-item:nth-of-type(1) {
+          font-size: 30rpx;
+        }
+
+        & .todo-input-group-item:nth-of-type(2) {
+          font-size: 28rpx;
+          font-weight: 300;
+          margin-top: 10rpx;
+        }
+      }
     }
   }
+
   .add {
     position: fixed;
     left: 80vw;

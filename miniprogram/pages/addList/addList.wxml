@@ -1,0 +1,25 @@
+<custom-container>
+  <custom-item class="top"
+    brb="{{true}}" brt="{{true}}" border="{{false}}" borderWidth="{{91}}" showArrow="{{false}}" padding="0 30rpx 30rpx 30rpx">
+    <view class="item-content top-content">
+      <view class="top-icon" style="background-color: {{current}};">
+        <image class="top-icon-img" src="{{icon.path}}"/>
+      </view>
+      <input class="top-input" type="text" placeholder="列表名称" />
+    </view>
+  </custom-item>
+  <custom-item class="middle"
+    brb="{{true}}" brt="{{true}}" border="{{false}}" borderWidth="{{91}}" showArrow="{{false}}" padding="0">
+    <view class="item-content middle-content">
+      <block wx:for="{{colors}}" wx:key="index">
+        <view class="middle-color" style="background-color: {{item}};" 
+          data-id="{{item}}" bindtap="handleColorSelect" />
+      </block>
+    </view>
+  </custom-item>
+
+  <button-form
+    bindlefttap="handleButtonTap" 
+    bindrighttap="handleButtonTap" 
+  />
+</custom-container>

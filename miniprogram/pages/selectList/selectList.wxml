@@ -16,7 +16,7 @@
       <custom-icon class="item-icon-right" src="/images/right.png" bgColor="none" isCircle="false" scale="1.2"/>
     </block>
   </custom-item>
-  <view class="button-box">
+  <!-- <view class="button-box">
     <custom-button class="button-box-item">返回</custom-button>
-  </view>
+  </view> -->
 </custom-container>

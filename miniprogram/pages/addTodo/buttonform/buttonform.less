@@ -1,0 +1,17 @@
+@import "/less_global/variable.less";
+.button-list {
+  display: flex;
+  justify-content: flex-end;
+  .button-list-item {
+    margin: 0 40rpx;
+    border-radius: 20rpx;
+  }
+  .button-list-item:nth-child(1) {
+    background-color: @custom_pramary;
+    color: white;
+  }
+  .button-list-item:nth-child(2) {
+    background-color: @custom_danger;
+    color: #ffffff;
+  }
+}
