@@ -1,6 +1,7 @@
 <!--components/mytodos/mytodos.wxml-->
+<scroll-view class="scroll" scroll-y="{{true}}">
 <block wx:for="{{list}}" wx:key="id">
-  <view class="item">    
+  <view class="item" bindtap="navToListDetail" data-item="{{item}}">    
     <custom-icon class="icon" src="/images/list.png" bgColor="{{item.iconColor}}" scale="0.9" />
     <view class="content">
       <view class="title">{{item.title}}</view>
@@ -10,3 +11,4 @@
     </view>
   </view>
 </block>
+</scroll-view>

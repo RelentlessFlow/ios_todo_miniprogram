@@ -6,11 +6,11 @@
       <switch class="switch-view-content" checked="{{flag}}" bindtap="handleFlagSwitch" />
     </view>
   </custom-item>
-  <custom-item class="item" brb="{{true}}" brt="{{true}}" border="{{false}}" showArrow="{{true}}" >
+  <custom-item class="item" brb="{{true}}" brt="{{true}}" border="{{false}}" showArrow="{{true}}" bindtap="handleCategoryTap">
     <view class="item-list">
       <view>列表</view>
       <view class="item-list-right">
-        <text class="item-list-right-dot">·</text>提醒
+        <text class="item-list-right-dot">·</text>{{currentName}}
       </view>
     </view>
   </custom-item>

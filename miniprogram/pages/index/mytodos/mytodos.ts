@@ -1,3 +1,6 @@
+import { IAppOption } from "../../../../typings";
+import { ToList } from "../../../type/todo";
+const app = getApp<IAppOption>()
 // components/mytodos/mytodos.ts
 Component({
   /**
@@ -6,11 +9,7 @@ Component({
   properties: {
     list: {
       type: Object,
-      value: [
-        { id: 1, iconColor: '#eb8835', title: "列表2", count: 0 },
-        { id: 2, iconColor: '#eb8835', title: "列表1", count: 20 },
-        { id: 3, iconColor: '#eb8835', title: "列表2", count: 12 }
-      ]
+      value: [] as Array<ToList>
     }
   },
 
@@ -24,6 +23,12 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    navToListDetail: function(e:any) {
+      const {item} = e.currentTarget.dataset;
+      app.globalData.currentList = item
+      wx.navigateTo({
+        url: `/pages/todoList/todoList`
+      })
+    }
   }
 })

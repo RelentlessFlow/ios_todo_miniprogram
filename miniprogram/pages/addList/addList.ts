@@ -1,4 +1,4 @@
-// pages/addList.ts
+import {addToList} from '../../api/apiTodo'
 Page({
 
   /**
@@ -11,19 +11,39 @@ Page({
       "#b57dd5", "#9a8566", "#5d666f", "#d1a8a0"
     ],
     current: "#ea4d3d",
-    icon: {id: 1, path: "/images/icons/list.png"}
+    icon: {id: 1, path: "/images/icons/list.png"},
+    input: ""
   },
-  handleButtonTap: function(e:any) {
-    if(e.type === 'leftTap') {
-      console.log('leftTap')
+  handleButtonTap: async function(e:any) {
+    if(e.type === 'lefttap') {
+      const {current, input} = this.data
+      if(input === "") return
+      const result = await addToList(current, input)
+      if(result) {
+        wx.showToast({
+          title: "添加成功"
+        })
+        wx.navigateTo({
+          url: "/pages/index/index"
+        })
+      }else {
+        wx.showToast({
+          title: "添加失败"
+        })
+        return
+      }
     }
-    if(e.type === 'rightTap') {
-      console.log('rightTap')
+    if(e.type === 'righttap') {
+      wx.navigateBack()
     }
   },
   handleColorSelect: function(e:any) {
     this.setData({"current": e.target.dataset.id}) 
   },
+  handleInputChange: function(e:any) {
+    this.setData({input: e.detail.value})
+  },
+  
   /**
    * 生命周期函数--监听页面加载
    */

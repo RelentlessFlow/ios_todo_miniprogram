@@ -1,8 +1,11 @@
 <custom-container>
+<view class="container">
   <seach></seach>
-  <todos></todos>
-  <view class="list-title">我的列表</view>
-  <mytodos list="{{mylist}}" class="list-content" />
+  <todos todos_sort="{{todos_sort}}" bindtapt="handleTapTop" />
+  <view class="my-list">
+    <view class="list-title">我的列表</view>
+    <mytodos list="{{mylist}}" class="list-content" />
+  </view>
   <view class="bottom-button-list">
     <custom-button class="bottom-button-item" bindtap="handleTapAddTodo">
       <image class="bottom-button-item-icon" src="/images/add.png" />
@@ -12,4 +15,5 @@
       <view class="bottom-button-item-title">添加列表</view>
     </custom-button>
   </view>
+</view>
 </custom-container>

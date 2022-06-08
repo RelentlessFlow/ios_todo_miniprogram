@@ -1,8 +1,12 @@
 /// <reference path="./types/index.d.ts" />
 
+import { Todo, ToList } from "../miniprogram/type/todo";
+
 interface IAppOption {
   globalData: {
-    userInfo?: WechatMiniprogram.UserInfo,
-  }
-  userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback,
+    todos: Array<Todo>,
+    toLists: Array<ToList>,
+    currentList: ToList,
+  },
+  initApp: Function
 }

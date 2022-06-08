@@ -1,7 +1,8 @@
 {
-  "description": "项目配置文件",
+  "description": "项目配置文件，详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
   "packOptions": {
-    "ignore": []
+    "ignore": [],
+    "include": []
   },
   "miniprogramRoot": "miniprogram/",
   "compileType": "miniprogram",
@@ -45,10 +46,18 @@
       "typescript",
       "less"
     ],
-    "ignoreUploadUnusedFiles": true
+    "ignoreUploadUnusedFiles": true,
+    "useStaticServer": true
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-  "appid": "wx0af6bc284a87d144",
-  "condition": {}
+  "appid": "wx6b113783e3eea98a",
+  "condition": {},
+  "libVersion": "2.24.3",
+  "srcMiniprogramRoot": "miniprogram/",
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate/"
 }

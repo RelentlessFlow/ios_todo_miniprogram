@@ -5,7 +5,9 @@
       <view class="top-icon" style="background-color: {{current}};">
         <image class="top-icon-img" src="{{icon.path}}"/>
       </view>
-      <input class="top-input" type="text" placeholder="列表名称" />
+      <input class="top-input" type="text" placeholder="列表名称" 
+      value="{{input}}" bindinput="handleInputChange"
+      />
     </view>
   </custom-item>
   <custom-item class="middle"

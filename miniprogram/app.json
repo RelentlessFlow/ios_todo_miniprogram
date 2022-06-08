@@ -1,11 +1,11 @@
 {
-  "pages": [
+  "pages": [ 
     "pages/index/index",
-    "pages/addList/addList",
-    "pages/addTodo/addTodo",
-    "pages/todoList/todoList",
     "pages/selectList/selectList",
-    "pages/test/test"
+    "pages/addTodo/addTodo",
+
+    "pages/todoList/todoList",
+    "pages/addList/addList"
   ],
   "window": {
     "backgroundTextStyle": "light",

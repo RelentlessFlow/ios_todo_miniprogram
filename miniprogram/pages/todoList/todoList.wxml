@@ -1,1 +1,1 @@
-<list />
+<list todos="{{todos}}" title="{{title}}" categoryId="{{id}}"/>

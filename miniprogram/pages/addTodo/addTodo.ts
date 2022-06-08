@@ -1,40 +1,69 @@
-// pages/addTodo/addTodo.ts
+const app = getApp<IAppOption>()
+import { IAppOption } from '../../../typings'
+import { addTodo } from '../../api/apiTodo'
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    flag : false, name: '', remark: ''
+    flag: false, name: '', remark: '',
+    currentId: "",
+    currentName: ""
   },
-  handleButtonTap(e:any) {
-    if(e.type === 'lefttap') { // 左点击
-      console.log('handleButtonTap Left');
+  async handleButtonTap(e: any) {
+    const { name, flag, remark, currentId } = this.data
+    if (e.type === 'lefttap') { // 左点击
+      const result = await addTodo(name, remark, flag, false, currentId)
+      if (result) {
+        wx.navigateTo({
+          url: "/pages/index/index"
+        })
+      } else {
+        wx.showToast({
+          title: "网络请求超时"
+        })
+      }
     }
-    if(e.type === 'righttap') { // 左点击
+    if (e.type === 'righttap') { // 左点击
       console.log('handleButtonTap Right');
     }
   },
   handleFlagSwitch() {
-    this.setData({"flag": !this.data.flag})
+    this.setData({ "flag": !this.data.flag })
   },
-  handleInput(e:any) {
-    const {data, type} = e.detail;
-    if(type === 'input1') { this.setData({'name': data.value}) }
-    if(type === 'input2') { this.setData({'remark': data.value}) }
+  handleInput(e: any) {
+    const { data, type } = e.detail;
+    if (type === 'input1') { this.setData({ 'name': data.value }) }
+    if (type === 'input2') { this.setData({ 'remark': data.value }) }
+  },
+  handleCategoryTap() {
+    wx.navigateTo({
+      url: "/pages/selectList/selectList"
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad() {
-    
+  onLoad(options) {
+    const { currentId, currentName } = options
+    if(currentId != undefined) {
+      if(currentId.length > 4) {
+        this.setData({currentId})
+        this.setData({currentName})
+      }
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    const { currentId, currentName } = this.data
+    if(currentId == "" && currentName == "") {
+      const { id, title } = app.globalData.toLists[0]
+      this.setData({ currentId: id })
+      this.setData({ currentName: title })
+    }
   },
 
   /**

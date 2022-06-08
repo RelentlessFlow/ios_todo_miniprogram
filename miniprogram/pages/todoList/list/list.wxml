@@ -6,11 +6,14 @@
   </view>
   <!-- 已完成项目展示 -->
   <block wx:if="{{finished_list.length > 0}}">
-    <custom-item class="notice" brb="{{false}}" brt="{{true}}" border="{{true}}" borderWidth="{{96}}" showArrow="{{false}}" bgColor="{{'none'}}">
+    <custom-item class="notice" brb="{{false}}" brt="{{true}}" 
+      border="{{true}}" borderWidth="{{96}}" showArrow="{{false}}" bgColor="{{'none'}}"
+      bindtap="handleTapShowButton"
+    >
       <view class="notice-content">
         {{finished_list.length}}项已完成，{{unfinished_list.length}}项未完成。
       </view>
-      <view class="notice-button" bindtap="handleTapShowButton">显示</view>
+      <view class="notice-button">显示</view>
     </custom-item>
   </block>
 
@@ -35,7 +38,10 @@
   <!-- 待完成项目组 -->
   <view class="small-title">待完成</view>
   <block wx:for="{{unfinished_list}}" wx:key="id">
-    <custom-swper-item class="swiper" id="{{item.id}}" bindswiper="handleSwiper" turn="{{item.flag}}" leftText1="取消旗帜" leftText2="旗帜" rightText="删除">
+    <custom-swper-item class="swiper" id="{{item.id}}" 
+      bindswiper="handleSwiper" turn="{{item.flag}}" leftText1="取消旗帜" leftText2="旗帜" rightText="删除"
+      bindtap="handleItemTapShowDetail" data-remark="{{item.remark}}"
+    >
       <custom-item brb="{{false}}" brt="{{true}}" border="{{true}}" borderWidth="{{91}}" showArrow="{{false}}" bgColor="{{'none'}}" padding="20rpx 30rpx 20rpx 0" height="100%">
         <view class="todo">
           <view class="todo-complete" bindtap="handleTapCompleteButton" data-id="{{item.id}}">
@@ -65,10 +71,13 @@
   <block wx:if="{{showFinished}}">
     <view class="small-title">已完成</view>
     <block wx:for="{{finished_list}}" wx:key="id">
-      <custom-swper-item class="swiper" id="{{item.id}}" bindswiper="handleSwiper" turn="{{item.flag}}" leftText1="旗帜" leftText2="取消旗帜" rightText="删除">
+      <custom-swper-item class="swiper" id="{{item.id}}" 
+        bindswiper="handleSwiper" turn="{{item.flag}}" leftText1="取消旗帜" leftText2="旗帜" rightText="删除"
+        bindtap="handleItemTapShowDetail" data-remark="{{item.remark}}"
+      >
         <custom-item brb="{{false}}" brt="{{true}}" border="{{true}}" borderWidth="{{91}}" showArrow="{{false}}" bgColor="{{'none'}}" padding="20rpx 30rpx 20rpx 0" height="100%">
           <view class="todo">
-            <view class="todo-complete" bindtap="handleTapCompleteButton" data-id="{{item.id}}">
+            <view class="todo-complete" bindtap="handleTapCompleteButton" data-id="{{item.id}}" data-index="{{index}}">
               <view class="todo-complete-circle">
                 <block wx:if="{{item.complete}}">
                   <view class="todo-complete-circle-small" />

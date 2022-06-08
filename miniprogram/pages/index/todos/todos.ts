@@ -1,4 +1,4 @@
-// components/todos/todos.ts
+import {TodoTop} from '../../../type/todo'
 Component({
   /**
    * 组件的属性列表
@@ -6,7 +6,7 @@ Component({
   properties: {
     todos_sort: {
       type: Object,
-      value: { today: 1, plan: 2, all: 3, flag: 4 }
+      value: { today: 1, plan: 2, all: 3, flag: 4 } as TodoTop
     },
   },
 
@@ -24,11 +24,8 @@ Component({
     _getDay() {
       return new Date().getDate()
     },
-    navigateToTodos(e:any) {
-      const {id} = e.currentTarget.dataset
-      wx.navigateTo({
-        url: `/pages/todoList/todoList?id=${id}`
-      })
+    handeTap(e:any) {
+      this.triggerEvent("tapt", {type: e.currentTarget.dataset.type})
     }
   },
 

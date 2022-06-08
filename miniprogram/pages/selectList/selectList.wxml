@@ -1,22 +1,13 @@
 <custom-container class="container" bgColor="#feffff">
 <view class="title">将在“提醒”中创建提醒事项</view>
-  <custom-item class="item" brb="{{false}}" brt="{{true}}" 
+  <block wx:for="{{list}}" wx:key="id">
+    <custom-item class="item" brb="{{false}}" brt="{{true}}" data-id="{{item.id}}" data-name="{{item.title}}" bindtap="handleTap" 
     border="{{true}}" borderWidth="{{86}}" showArrow="{{false}}" bgColor="{{'none'}}">
-    <custom-icon src="/images/list.png" bgColor="#eb8835"/>
-    <view class="item-name">乐乐</view>
-    <block wx:if="{{true}}">
+    <custom-icon src="/images/list.png" bgColor="{{item.iconColor}}"/>
+    <view class="item-name">{{item.title}}</view>
+    <block wx:if="{{item.id === currentId}}">
       <custom-icon class="item-icon-right" src="/images/right.png" bgColor="none" isCircle="false" scale="1.2"/>
     </block>
   </custom-item>
-  <custom-item class="item" brb="{{true}}" brt="{{false}}" 
-    border="{{true}}" borderWidth="{{86}}" showArrow="{{false}}" bgColor="{{'none'}}">
-    <custom-icon src="/images/list.png" bgColor="#eb8835"/>
-    <view class="item-name">提醒</view>
-    <block wx:if="{{true}}">
-      <custom-icon class="item-icon-right" src="/images/right.png" bgColor="none" isCircle="false" scale="1.2"/>
-    </block>
-  </custom-item>
-  <!-- <view class="button-box">
-    <custom-button class="button-box-item">返回</custom-button>
-  </view> -->
+  </block>
 </custom-container>

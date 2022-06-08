@@ -1,5 +1,12 @@
 @import '/less_global/variable.less';
 
+.container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
 .list-title {
   font-size: 40rpx;
   font-weight: 500;
@@ -8,8 +15,9 @@
 }
 
 .list-content {
-  flex-grow: 1;
+  height: 55vh;
 }
+
 
 .bottom-button-list {
   display: flex;
