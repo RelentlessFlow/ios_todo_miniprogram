@@ -2515,11 +2515,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/green/Desktop/微信小程序/mini_cloud/mini_cloud/mini_cloud.csproj",
+      "projectUniqueName": "/Users/green/Documents/GitHub/ios_todo_miniprogram/mini_cloud/mini_cloud/mini_cloud.csproj",
       "projectName": "mini_cloud",
-      "projectPath": "/Users/green/Desktop/微信小程序/mini_cloud/mini_cloud/mini_cloud.csproj",
+      "projectPath": "/Users/green/Documents/GitHub/ios_todo_miniprogram/mini_cloud/mini_cloud/mini_cloud.csproj",
       "packagesPath": "/Users/green/.nuget/packages/",
-      "outputPath": "/Users/green/Desktop/微信小程序/mini_cloud/mini_cloud/obj/",
+      "outputPath": "/Users/green/Documents/GitHub/ios_todo_miniprogram/mini_cloud/mini_cloud/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/green/.nuget/NuGet/NuGet.Config"

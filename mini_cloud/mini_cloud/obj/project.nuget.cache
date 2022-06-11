@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DkL4HUmWhgM3SFjCghJ0M0d0K6RDn6uZ3pIkLoEaEjnU2OUmty+6uBtYmm3rf/BmyPSUm/aBmzxEZUFU0LnkIg==",
+  "dgSpecHash": "vcoUMSFUlhIN1/Qd0bgNdyk/gdPzUNBBaOSEiEG16sQvHAi98Pr7brc/ZfTjqCaJn2DwkGRVfGn3kiuSOWecEw==",
   "success": true,
-  "projectFilePath": "/Users/green/Desktop/微信小程序/mini_cloud/mini_cloud/mini_cloud.csproj",
+  "projectFilePath": "/Users/green/Documents/GitHub/ios_todo_miniprogram/mini_cloud/mini_cloud/mini_cloud.csproj",
   "expectedPackageFiles": [
     "/Users/green/.nuget/packages/entityframework/6.4.4/entityframework.6.4.4.nupkg.sha512",
     "/Users/green/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",

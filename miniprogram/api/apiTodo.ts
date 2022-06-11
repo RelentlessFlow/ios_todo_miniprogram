@@ -7,7 +7,7 @@ export const getToLists = () => {
       },
       success (res) {
         resolve(res.data)
-      }
+      },
     })
   }))
 }
